@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
 - gotk-components.yaml
 - gotk-sync.yaml
-- ../../../-angular-deployment.yaml
-- ../../../-express-deployment.yaml
+- ../../../angular-deployment.yaml
+- ../../../express-deployment.yaml
 - ../../../angular-service.yaml
 - ../../../express-service.yaml
