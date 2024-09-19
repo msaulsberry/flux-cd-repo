@@ -22,6 +22,6 @@ spec:
       - name: angular-frontend
         image: fluxlabregistry.azurecr.io/flux-lab-angular-frontend
         ports:
-        - containerPort: 4000
+        - containerPort: 4088
       imagePullSecrets:
       - name: acr-secret
