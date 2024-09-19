@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: express-backend
-        image: fluxlabregistry.azurecr.io/flux-lab-express-backend
+        image: fluxlabregistry.azurecr.io/flux-lab-express-backend:latest
         ports:
         - containerPort: 4000
       imagePullSecrets:

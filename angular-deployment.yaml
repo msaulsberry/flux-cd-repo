@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: angular-frontend
-        image: fluxlabregistry.azurecr.io/flux-lab-angular-frontend
+        image: fluxlabregistry.azurecr.io/flux-lab-angular-frontend:latest
         ports:
         - containerPort: 4088
       imagePullSecrets:
