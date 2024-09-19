@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: angular-frontend
+  namespace: default
+spec:
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  replicas: 5
+  selector:
+    matchLabels:
+      app: angular-frontend
+  template:
+    metadata:
+      labels:
+        app: angular-frontend
+    spec:
+      containers:
+      - name: angular-frontend
+        image: fluxlabregistry.azurecr.io/flux-lab-angular-frontend
+        ports:
+        - containerPort: 4000
+      imagePullSecrets:
+      - name: acr-secret

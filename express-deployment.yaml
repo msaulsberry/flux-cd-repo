@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: express-backend
+  namespace: default
+spec:
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  replicas: 5
+  selector:
+    matchLabels:
+      app: express-backend
+  template:
+    metadata:
+      labels:
+        app: express-backend
+    spec:
+      containers:
+      - name: express-backend
+        image: fluxlabregistry.azurecr.io/flux-lab-express-backend
+        ports:
+        - containerPort: 4000
+      imagePullSecrets:
+      - name: acr-secret
